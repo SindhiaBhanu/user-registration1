@@ -1,12 +1,12 @@
 #!/bin/bash -x
 shopt -s extglob
-read fname
-pat="^[A-Z]{1}[a-z]{3,}$"
-if [[ $fname =~ $pat ]]
+read lastName
+pattern="^[A-Z]{1}[a-z]{3,}$"
+if [[ $lastName =~ $pattern ]]
 then
-        echo "$fname"
+        echo "$lastName"
 else
-        echo "frst character start with caps"
+        echo "invalid"
 fi
 
 
