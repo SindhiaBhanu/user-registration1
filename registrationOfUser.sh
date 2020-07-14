@@ -1,12 +1,11 @@
-#!/bin/bash
-read -p "enter a phoneNumber : " phoneNumber
-phNoPat="^[9][1][ ][0-9]{10}$"
-if [[ $phoneNumber =~ $phNoPat ]]
+#!/bin/bash -x
+read -p "enter your password :" password
+pattern="^[0-9a-zA-Z.+@!$%*#]{8,}"
+if [[ $password =~ $pattern ]]
 then
         echo valid
 else
         echo invalid
-        echo write number in indian format e.g:91 1234567890
 fi
 
 
