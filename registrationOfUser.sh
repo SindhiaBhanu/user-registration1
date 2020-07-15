@@ -39,3 +39,30 @@ function lastName () {
         done
 }
 lastName
+
+
+
+
+function emailCheck () {
+   shopt -s extglob
+   boolean=0
+   pattern="^[a-zA-Z0-9]+([.+_-]{1}[a-zA-Z0-9]{3,}){0,2}\@[a-zA-Z0-9]+(\.[a-z]+){1,3}$"
+   while [[ $boolean -eq 0 ]]
+   do
+      echo "Enter your Email ID : "
+         read char
+         if [[ $char =~ $pattern ]]
+         then
+                  echo Email ID is valid
+                  ((boolean++))
+                  break
+         else
+                  echo Email Id is Invalid
+         fi
+   done
+
+}
+emailCheck
+
+
+
