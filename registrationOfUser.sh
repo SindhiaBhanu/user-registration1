@@ -83,3 +83,25 @@ function mobileNumberCheck () {
         done
 }
 mobileNumberCheck
+
+
+
+
+function passwordCheck(){
+        boolean=0
+        specialCharacter="^[A-Za-z0-9][@#$%&=_-]{1}[A-Za-z0-9]*$"
+        while [[ $boolean -eq 0 ]]
+        do
+                echo "Enter the password"
+                read  password
+      if [[ ${#password} -ge 8 ]]
+                then
+                        echo valid password
+                        ((boolean++))
+                        break
+                else
+                        echo The password is INVALID
+                fi
+        done
+}
+passwordCheck
