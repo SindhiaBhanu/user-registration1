@@ -94,13 +94,13 @@ function passwordCheck(){
         do
                 echo "Enter the password"
                 read  password
-      if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]] ]]
+      if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]]+ && "$password" =~ [[:digit:]] ]]
                 then
                         echo valid password
                         ((boolean++))
                         break
                 else
-                        echo The password is INVALID
+                        echo The password is INVALID give atleast one capital and one digit with minimum 8 characters
                 fi
         done
 }
