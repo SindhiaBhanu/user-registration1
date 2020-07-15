@@ -94,7 +94,7 @@ function passwordCheck(){
         do
                 echo "Enter the password"
                 read  password
-      if [[ ${#password} -ge 8 ]]
+      if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]] ]]
                 then
                         echo valid password
                         ((boolean++))
@@ -105,3 +105,7 @@ function passwordCheck(){
         done
 }
 passwordCheck
+
+
+
+
