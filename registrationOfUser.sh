@@ -89,18 +89,18 @@ mobileNumberCheck
 
 function passwordCheck(){
         boolean=0
-        specialCharacter="^[A-Za-z0-9][@#$%&=_-]{1}[A-Za-z0-9]*$"
+        specialCharacter="^[A-Za-z0-9]*[@#$%&*=_-]{1}[A-Za-z0-9]*$"
         while [[ $boolean -eq 0 ]]
         do
                 echo "Enter the password"
                 read  password
-      if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]]+ && "$password" =~ [[:digit:]] ]]
+                if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]]+ && "$password" =~ [[:digit:]]+ && $password =~ $specialCharacter ]]
                 then
-                        echo valid password
-                        ((boolean++))
-                        break
+                      echo valid password
+                      ((boolean++))
+                      break
                 else
-                        echo The password is INVALID give atleast one capital and one digit with minimum 8 characters
+                        echo The password is INVALID give atleast one capital and one digit with minimum 8 characters and exactly one special character
                 fi
         done
 }
