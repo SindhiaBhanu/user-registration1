@@ -66,3 +66,20 @@ emailCheck
 
 
 
+function mobileNumberCheck () {
+        boolean=0
+        format="^[9][1][ ][0-9]{10}$"
+        while [[ $boolean -eq 0 ]]
+        do
+                read -p "Enter a mobile number : " number
+                if [[ $number =~ $format ]]
+                then
+                        echo valid number
+                        ((boolean++))
+                        break
+                else
+                        echo Invalid number
+                fi
+        done
+}
+mobileNumberCheck
